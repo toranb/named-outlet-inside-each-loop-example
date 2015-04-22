@@ -7,5 +7,10 @@ export default Ember.Route.extend({
         'outlet': options.index,
         'model': options.index
       });
+    },
+    actions: {
+        willTransition: function() {
+            this.disconnectOutlet(this.context.index);
+        }
     }
 });
