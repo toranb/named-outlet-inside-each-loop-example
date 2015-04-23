@@ -1,8 +1,17 @@
 {{#each model as |hat index|}}
   <div class="hat">{{hat.name}}</div>
+  {{hat.things}}
+  {{#each hat.things as |thing|}}
+    <div>{{thing}}</div>
+  {{/each}}
   <div class="detail">
     {{#link-to "hats.detail" index}}details{{/link-to}}
     {{#link-to "hats.include" index}}include{{/link-to}}
     {{custom-outlet index}}
   </div>
+
+  <button class="remove" {{action "remove" hat}}>Remove</button>
+  <button class="wat" {{action "wat" hat}}>WAT</button>
 {{/each}}
+
+<button class="add" {{action "add"}}>Add Another</button>
