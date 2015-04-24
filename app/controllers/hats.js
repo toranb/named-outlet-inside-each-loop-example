@@ -9,11 +9,9 @@ export default Ember.Controller.extend({
         remove: function(thing) {
             this.get("model").removeObject(thing);
         },
-        wat: function(x) {
-            //var model = this.get("model");
-            console.log(x.get("things").toArray());
-            x.get("things").removeObject(8);
-            console.log(x.get("things").toArray());
+        wat: function(model) {
+            model.removeThing(8);
+            //model.get("things").removeObject(number);
         }
     }
 });

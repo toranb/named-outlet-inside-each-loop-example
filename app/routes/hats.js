@@ -11,16 +11,15 @@ export default Ember.Route.extend({
         var filter = function(item) {
             return item.get("things").indexOf(8) > -1;
         }
+
         return Ember.ArrayProxy.extend({
           content: function () {
-            console.log("WAT");
             var filter_func = this.get("filter_func");
             return this.get("source").filter(filter_func);
-          }.property("source.@each.allThings")
+          }.property("source.@each.thingCount")
         }).create({
           filter_func: filter,
           source: all
         });
-        //attributes.push("source.@each." + computed_key);
     }
 });

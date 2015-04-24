@@ -1,4 +1,5 @@
 {{#each model as |hat index|}}
+  <span>total things: {{hat.thingCount}}</span>
   <div class="hat">{{hat.name}}</div>
   {{hat.things}}
   {{#each hat.things as |thing|}}
