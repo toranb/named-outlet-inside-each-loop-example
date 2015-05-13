@@ -7,8 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
     this.route("hats", {path: "/"}, function() {
-        this.route("detail", {path: "/detail/:index"});
-        this.route("include", {path: "/include/:index"});
+        this.route("detail", {path: "/:id/detail"});
+        this.route("include", {path: "/:id/include"});
     });
 });
 

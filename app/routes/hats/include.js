@@ -4,13 +4,13 @@ export default Ember.Route.extend({
     renderTemplate: function(model, options){
       this.render('hats/include',{
         'into':'hats',
-        'outlet': options.index,
-        'model': options.index
+        'outlet': options.id,
+        'model': options.name
       });
     },
     actions: {
         willTransition: function() {
-            this.disconnectOutlet(this.context.index);
+            this.disconnectOutlet(this.context.id);
         }
     }
 });
