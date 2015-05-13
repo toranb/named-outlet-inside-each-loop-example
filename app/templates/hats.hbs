@@ -1,8 +1,8 @@
 {{#each model as |hat index|}}
   <div class="hat">{{hat.name}}</div>
   <div class="detail">
-    {{#link-to "hats.detail" index}}details{{/link-to}}
-    {{#link-to "hats.include" index}}include{{/link-to}}
-    {{outlet index}}
+    {{#link-to "hats.detail" hat.name}}details{{/link-to}}
+    {{#link-to "hats.include" hat.name}}include{{/link-to}}
+    {{outlet hat.name}}
   </div>
 {{/each}}
